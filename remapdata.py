@@ -100,3 +100,11 @@ def replace_data_over_block_range(blocks):
               flush=True)
 
     return
+
+
+replace_data_over_block_range(rank_blocks)
+comm.barrier()
+
+if rank == 0:
+    print('all processes complete, closing output file')
+    data_write.close()
