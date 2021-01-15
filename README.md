@@ -9,7 +9,7 @@ Based on a script originally written by [Carl E. Fields](https://github.com/carl
 
 3. Specify the physical variables to copy in the `variables` parameter, or allow it to copy all variables available.
 
-4. To allow multiple MPI processes to write to the same chk file, set the bash environment variable `export HDF5_USE_FILE_LOCKING=FALSE`
+4. To allow multiple MPI processes to write to the same chk file, set the bash environment variable `export HDF5_USE_FILE_LOCKING=FALSE` (processes only write to different blocks, so there should be no collisions).
 
 5. Run the script, e.g. `mpirun -np 12 python remapdata.py`
 
